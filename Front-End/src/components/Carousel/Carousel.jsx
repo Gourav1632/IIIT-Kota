@@ -3,13 +3,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from 'axios'
-import EventCard from "../EventCard/EventCard";
+import EventCard from "./EventCard/EventCard";
 import "./Carousel.css"
+import EventPopUp from "./EventPopUp/EventPopUp";
 
 function Carousel() {
   const [events, setEvents] = useState([]);
   const [selectedEvent,setSelectedEvent] = useState(null)
+  const [isDragging, setIsDragging] = useState(false);
   
+  // Fetching events info
   useEffect(() => {
     const getEvents = async () => {
       try {
@@ -23,22 +26,27 @@ function Carousel() {
   }, []);
 
   const handleEventClick = (event)=>{
-    setSelectedEvent(event)
+    if (!isDragging) {
+      setSelectedEvent(event);
+    }
   }
   const closeModal = () => {
-    setSelectedEvent(null); // Close modal
+    setSelectedEvent(null);
   };
 
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    autoplay: true, // Enable autoplay
+    autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover : true,
     slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 0,
+    // To not open the popup while dragging
+    beforeChange: () => setIsDragging(true), 
+    afterChange: () => setIsDragging(false), 
     responsive: [
       {
         breakpoint: 1024,

@@ -1,16 +1,17 @@
 import React from 'react'
 import styled from "styled-components"
+import {motion} from 'framer-motion'
 function EventCard({title,date,img}) {
   return (
     <Container>
 
-    <div className='event-card'>
+    <motion.div whileHover={{scale:1.05}} transition={{ duration: 0.3, ease: "easeOut" }} className='event-card'>
       <div className='event-img'>
         <img src={img} alt="" />
       </div>
       <div className="event-title">{title}</div>
       <div className="event-date">{date}</div>
-    </div>
+    </motion.div>
     </  Container>
   )
 }
@@ -18,10 +19,10 @@ function EventCard({title,date,img}) {
 const Container = styled.div`
   .event-card{
     display: flex;
-    width: 350px;
     height: 100%;
     flex-direction: column;
-    border: 1px solid #cfd3dc;
+    margin: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     .event-img{
       img{
         height: 200px;
@@ -36,7 +37,7 @@ const Container = styled.div`
     .event-date{
       padding: 1rem;
       padding-top : 0rem;
-      color: #6b88ad;
+      color: #525252;
     }
   }
 `
