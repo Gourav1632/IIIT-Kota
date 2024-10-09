@@ -16,7 +16,7 @@ This project is a **carousel component** designed to display images, text, or ot
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/carousel-project.git
+   git clone https://github.com/Gourav1632/IIIT-Kota-Frontend.git
 
 2. Navigate to project directory
 3. Install all the dependencies using `npm install`.
