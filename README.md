@@ -21,7 +21,10 @@ This project is a **carousel component** designed to display images, text, or ot
 2. Navigate to project directory
 3. Install all the dependencies using `npm install`.
 4. After the dependencies are installed. Run command `npm run dev`.
-5. Open the URL in the browser.
+5. Open the URL `http://localhost:5173/` in the browser.
+
+## Live Deployment
+https://iiitkota-carousel.netlify.app/
 
 ## Contact
 For any questions or issues, please contact [gouravpanchal1632@gmail.com].
